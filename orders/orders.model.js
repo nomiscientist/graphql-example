@@ -8,12 +8,12 @@ const orderData = [
                     id: 'redshoe',
                     description: 'Red Shoes',
                     price: 12.12,
-                    reviews: [
-                        {
-                            rating: 5,
-                            comment: 'Excellent'
-                        }
-                    ]
+                    // reviews: [
+                    //     {
+                    //         rating: 5,
+                    //         comment: 'Excellent'
+                    //     }
+                    // ]
                 },
                 quantity: 2
             },
@@ -22,12 +22,12 @@ const orderData = [
                     id: 'blackshoe',
                     description: 'Black Shoes',
                     price: 24.12,
-                    reviews: [
-                        {
-                            rating: 4,
-                            comment: 'Excellent'
-                        }
-                    ]
+                    // reviews: [
+                    //     {
+                    //         rating: 4,
+                    //         comment: 'Excellent'
+                    //     }
+                    // ]
                 },
                 quantity: 4
             }

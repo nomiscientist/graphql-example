@@ -3,23 +3,13 @@ const prodData = [
             id: 'redshoe',
             description: 'Red Shoes',
             price: 12.12,
-            reviews: [
-                {
-                    rating: 4,
-                    comment: 'very good'
-                }
-            ]
+            reviews: []
         },
         {
             id: 'blackshoe',
             description: 'Black Shoes',
             price: 24.12,
-            reviews: [
-                {
-                    rating: 5,
-                    comment: 'Excellent'
-                }
-            ]
+            reviews: []
         }
     ];
 
@@ -34,10 +24,39 @@ function getProductsByPrice(min, max) {
 }
 
 function getProductsByID(id) {
+    return prodData.find((product)=> {
+        return product.id === id;
+    });
+}
+
+function addNewProduct(id, description, price) {
     
+    const newProduct = {
+        id,
+        description,
+        price,
+        reviews: []
+    };
+    prodData.push(newProduct);
+    return newProduct;
+}
+
+function addProductReview(id, rating, comment) {
+    const matchedProduct = getProductsByID(id);
+    if(matchedProduct){
+        const newReview = {
+            rating,
+            comment
+        };
+        matchedProduct.reviews.push(newReview);
+        return newReview;
+    }
 }
 
 module.exports = {
     getAllProducts,
-    getProductsByPrice
+    getProductsByPrice,
+    getProductsByID,
+    addNewProduct,
+    addProductReview
 }
